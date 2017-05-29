@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/weixing
+        username: root
+        password: 123
+    jpa:
+        hibernate:
+              ddl-auto: update
+              dialect:  org.hibernate.dialect.MySQL5Dialect
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+    mvc:
+        view:
+            prefix: /page/
+            suffix: .jsp
