@@ -24,4 +24,13 @@ public class IndexController {
         request.getSession().setAttribute("userList",userList);
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String login(Integer id,HttpServletRequest request){
+        if(id != null){
+             User user=userServiceImpl.findUserById(id);
+             request.getSession().setAttribute("user",user);
+        }
+        return "chat";
+    }
 }
