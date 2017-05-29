@@ -1,0 +1,1547 @@
+@CHARSET "UTF-8";
+body{
+  font-family: Helvetica Neue,Helvetica,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
+  background: url(../images/2zrdI1g.jpg) no-repeat 50%;
+  background-size: cover;
+}
+.page-container{
+	width: 70%;
+    padding: 55px;
+    margin: auto;
+}
+  div.leftChat{
+       width:70%;
+       min-height: 600px;
+       max-height: 1200px;
+       float: left;
+       background: #EEEEEE;
+   }
+   div.textareaDiv{
+      height:400px;
+      width:100%;
+      border:1px solid #dbdbdb;
+      overflow:auto
+       
+   }
+   div.inputDiv{
+     margin-top:20px;
+   }
+    div.inputDiv input{
+       width:90%;
+       height: 40px;
+    }
+    div.inputDiv .chat{
+       float: right;
+       width:10%;
+    }
+    div.rightChat{
+       float: right;
+       /* margin-left: 20px; */
+       height:657px;
+       width:28%;
+       background: #2e3238;
+    }
+    div.rightChat ul{
+       margin-left: 79px;
+       
+    }
+    div.rightChat ul li{
+       margin-top:10px;
+    }
+    .message .avatar{
+       width: 40px;
+  	   height: 40px;
+       border-radius: 2px;
+       -moz-border-radius: 2px;
+       -webkit-border-radius: 2px;
+       float: left;
+       cursor: pointer;
+    }
+    .message.me .avatar{
+         float: right; 
+    }
+    .message.me .content{
+       overflow: hidden;
+    }
+    .message.me .bubble.bubble_primary{
+        float: right; 
+    }
+    /* 小脚脚 */
+    div.message.ng-scope.me .bubble:after,div.message.ng-scope.me .bubble:before{
+       position: absolute;
+       top: 14px;
+       border: 6px solid transparent;
+       content: " ";
+       border-left-width: 4px;
+       left: 100%;
+       border-left-color: #b2e281;
+       border-left-width: 4px;
+    }
+    .bubble:after, .bubble:before{
+      
+    }
+    div.message.ng-scope .bubble:after{
+       position: absolute;
+       top: 14px;
+       border: 6px solid transparent;
+       content: " ";
+       border-right-width: 4px;
+       right: 100%;
+       border-right-color: #fff;
+       border-right-width: 4px;
+    }
+    /* 小脚脚 */
+    .bubble{
+       max-width: 500px;
+  	   min-height: 1em;
+       display: inline-block;
+       vertical-align: top;
+       position: relative;
+       text-align: left;
+       font-size: 14px;
+       border-radius: 3px;
+       -moz-border-radius: 3px;
+       -webkit-border-radius: 3px;
+       margin: 0 10px;
+    }
+    .bubble_cont{
+       word-wrap: break-word;
+       word-break: break-all;
+       min-height: 25px;
+    }
+   
+    pre{
+       margin: 0;
+       font-family: inherit;
+       font-size: inherit;
+       white-space: pre-wrap;
+       word-break: normal;
+       /* background-color: #b2e281; */
+       background-color:white;
+       border: none;
+    }
+    div.message.ng-scope{
+       margin-left:12px;
+       margin-bottom: 30px;
+       border: none;
+    }
+    div.message.ng-scope.me pre{
+       background-color: #b2e281;
+       border: none;
+    }
+    .box_ft{
+      height: 178px;
+      width:100%;
+      margin-right: 19px;
+      border: 1px solid #d6d6d6;
+      border-top:none;
+      position: relative;
+    }
+     .action{
+        text-align: right;
+     }
+    .desc{
+       color: #888;
+       font-size: 12px;
+       margin-left: 10px;
+       margin-right: 7px;
+    }
+    .btn{
+       display: inline-block;
+  	   border: 1px solid #c1c1c1;
+       border-radius: 4px;
+       padding: 3px 20px;
+       font-size: 14px;
+    }
+    .btn_send{
+       background-color: #5a98de;
+       border-color: #5a98de;
+       color: #fff;
+       padding-left: 30px;
+       padding-right: 30px;
+    }
+    div.pushDiv{
+        position:fixed;
+        bottom:0;
+        right:0;
+        width:300px;
+        height:98px;
+        background: white;
+        border: 1px solid #d6d6d6;
+        box-shadow: 5px 5px 5px #888888;
+        border-radius: 4px;
+        display: none;
+    }
+    p.message_system{
+        text-align: center;
+  		margin: 10px auto;
+  		max-width: 50%;
+    }
+    .message_system .content{
+       display: inline-block;
+       background-color: #dcdcdc;
+       font-size: 12px;
+       padding: 1px 18px;
+        color: #fff;
+       border-radius: 2px;
+    }
+  .box_ft .toolbar{
+       height: 30px;
+       padding: 5px 17px;
+  }
+  .web_wechat_face{
+     width: 30px;
+     height: 30px;
+     background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+     background-position: -404px -398px;
+     -webkit-background-size: 487px 462px;
+     background-size: 487px 462px;
+     display: inline-block;
+  }
+  .mmpop{
+  position: absolute;
+  background-color: #fff;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  outline: none;
+ } 
+ .expression{
+      border: 1px solid #dedede;
+ }
+ .expression:after, .expression:before{
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 100%;
+  margin-left: -7px;
+ }
+ .expression:after{
+   margin-top: -1px;
+  border: 7px solid transparent;
+  border-top-color: #fff;
+ }
+ .exp_bd{
+    overflow: auto;
+  background-color: #fff;
+  height: 232px;
+ }
+ .scroll-wrapper{
+    overflow: hidden!important;
+    padding: 0!important;
+    position: relative;
+ }
+ .scroll-wrapper>.scroll-content{
+  border: none!important;
+  box-sizing: content-box!important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none!important;
+  max-width: none!important;
+  overflow:auto;
+  padding: 0;
+  position: relative!important;
+  top: 0;
+  width: auto!important; 
+ }
+ .exp_cont{
+   display: none;
+  overflow: hidden;
+  margin: 15px 20px;
+  padding-right: 20px\0;
+ }
+ .exp_cont.active{
+    display: block;
+ }
+ .qq_face{
+   overflow: hidden;
+  width: 435px;
+  height: 202px;
+  margin-right: -1px;
+ }
+ .qq_face a{
+  float: left;
+  width: 28px;
+  height: 28px;
+  font-size: 0;
+  text-indent: -999em;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+  cursor: pointer;
+  background: url(../images/15BPafa.png) no-repeat; 
+ }
+ .qq_face .qqface0{
+   background-position: 0 0;
+ }
+ .qq_face .qqface1{
+    background-position: -29px 0;
+ }
+ .qq_face .qqface2{
+    background-position: -58px 0;
+ }
+ .qq_face .qqface3{
+   background-position: -87px 0;
+ }
+ .qq_face .qqface4{
+   background-position: -116px 0;
+ }
+ .qq_face .qqface5{
+   background-position: -145px 0;
+ }
+ .qq_face .qqface6{
+   background-position: -174px 0;
+ }
+ .qq_face .qqface7{
+   background-position: -203px 0;
+ }
+ .qq_face .qqface8{
+   background-position: -232px 0;
+ }
+ .qq_face .qqface9{
+   background-position: -261px 0;
+ }
+ .qq_face .qqface10{
+   background-position: -290px 0;
+ }
+ .qq_face .qqface11{
+   background-position: -319px 0;
+ }
+ .qq_face .qqface12 {
+	background-position: -348px 0
+}
+
+.qq_face .qqface13 {
+	background-position: -377px 0
+}
+
+.qq_face .qqface14 {
+	background-position: -406px 0
+}
+
+.qq_face .qqface15 {
+	background-position: 0 -29px
+}
+
+.qq_face .qqface16 {
+	background-position: -29px -29px
+}
+
+.qq_face .qqface17 {
+	background-position: -58px -29px
+}
+
+.qq_face .qqface18 {
+	background-position: -87px -29px
+}
+
+.qq_face .qqface19 {
+	background-position: -116px -29px
+}
+
+.qq_face .qqface20 {
+	background-position: -145px -29px
+}
+
+.qq_face .qqface21 {
+	background-position: -174px -29px
+}
+
+.qq_face .qqface22 {
+	background-position: -203px -29px
+}
+
+.qq_face .qqface23 {
+	background-position: -232px -29px
+}
+
+.qq_face .qqface24 {
+	background-position: -261px -29px
+}
+
+.qq_face .qqface25 {
+	background-position: -290px -29px
+}
+
+.qq_face .qqface26 {
+	background-position: -319px -29px
+}
+
+.qq_face .qqface27 {
+	background-position: -348px -29px
+}
+
+.qq_face .qqface28 {
+	background-position: -377px -29px
+}
+
+.qq_face .qqface29 {
+	background-position: -406px -29px
+}
+
+.qq_face .qqface30 {
+	background-position: 0 -58px
+}
+
+.qq_face .qqface31 {
+	background-position: -29px -58px
+}
+
+.qq_face .qqface32 {
+	background-position: -58px -58px
+}
+
+.qq_face .qqface33 {
+	background-position: -87px -58px
+}
+
+.qq_face .qqface34 {
+	background-position: -116px -58px
+}
+
+.qq_face .qqface35 {
+	background-position: -145px -58px
+}
+
+.qq_face .qqface36 {
+	background-position: -174px -58px
+}
+
+.qq_face .qqface37 {
+	background-position: -203px -58px
+}
+
+.qq_face .qqface38 {
+	background-position: -232px -58px
+}
+
+.qq_face .qqface39 {
+	background-position: -261px -58px
+}
+
+.qq_face .qqface40 {
+	background-position: -290px -58px
+}
+
+.qq_face .qqface41 {
+	background-position: -319px -58px
+}
+
+.qq_face .qqface42 {
+	background-position: -348px -58px
+}
+
+.qq_face .qqface43 {
+	background-position: -377px -58px
+}
+
+.qq_face .qqface44 {
+	background-position: -406px -58px
+}
+
+.qq_face .qqface45 {
+	background-position: 0 -87px
+}
+
+.qq_face .qqface46 {
+	background-position: -29px -87px
+}
+
+.qq_face .qqface47 {
+	background-position: -58px -87px
+}
+
+.qq_face .qqface48 {
+	background-position: -87px -87px
+}
+
+.qq_face .qqface49 {
+	background-position: -116px -87px
+}
+
+.qq_face .qqface50 {
+	background-position: -145px -87px
+}
+
+.qq_face .qqface51 {
+	background-position: -174px -87px
+}
+
+.qq_face .qqface52 {
+	background-position: -203px -87px
+}
+
+.qq_face .qqface53 {
+	background-position: -232px -87px
+}
+
+.qq_face .qqface54 {
+	background-position: -261px -87px
+}
+
+.qq_face .qqface55 {
+	background-position: -290px -87px
+}
+
+.qq_face .qqface56 {
+	background-position: -319px -87px
+}
+
+.qq_face .qqface57 {
+	background-position: -348px -87px
+}
+
+.qq_face .qqface58 {
+	background-position: -377px -87px
+}
+
+.qq_face .qqface59 {
+	background-position: -406px -87px
+}
+
+.qq_face .qqface60 {
+	background-position: 0 -116px
+}
+
+.qq_face .qqface61 {
+	background-position: -29px -116px
+}
+
+.qq_face .qqface62 {
+	background-position: -58px -116px
+}
+
+.qq_face .qqface63 {
+	background-position: -87px -116px
+}
+
+.qq_face .qqface64 {
+	background-position: -116px -116px
+}
+
+.qq_face .qqface65 {
+	background-position: -145px -116px
+}
+
+.qq_face .qqface66 {
+	background-position: -174px -116px
+}
+
+.qq_face .qqface67 {
+	background-position: -203px -116px
+}
+
+.qq_face .qqface68 {
+	background-position: -232px -116px
+}
+
+.qq_face .qqface69 {
+	background-position: -261px -116px
+}
+
+.qq_face .qqface70 {
+	background-position: -290px -116px
+}
+
+.qq_face .qqface71 {
+	background-position: -319px -116px
+}
+
+.qq_face .qqface72 {
+	background-position: -348px -116px
+}
+
+.qq_face .qqface73 {
+	background-position: -377px -116px
+}
+
+.qq_face .qqface74 {
+	background-position: -406px -116px
+}
+
+.qq_face .qqface75 {
+	background-position: 0 -145px
+}
+
+.qq_face .qqface76 {
+	background-position: -29px -145px
+}
+
+.qq_face .qqface77 {
+	background-position: -58px -145px
+}
+
+.qq_face .qqface78 {
+	background-position: -87px -145px
+}
+
+.qq_face .qqface79 {
+	background-position: -116px -145px
+}
+
+.qq_face .qqface80 {
+	background-position: -145px -145px
+}
+
+.qq_face .qqface81 {
+	background-position: -174px -145px
+}
+
+.qq_face .qqface82 {
+	background-position: -203px -145px
+}
+
+.qq_face .qqface83 {
+	background-position: -232px -145px
+}
+
+.qq_face .qqface84 {
+	background-position: -261px -145px
+}
+
+.qq_face .qqface85 {
+	background-position: -290px -145px
+}
+
+.qq_face .qqface86 {
+	background-position: -319px -145px
+}
+
+.qq_face .qqface87 {
+	background-position: -348px -145px
+}
+
+.qq_face .qqface88 {
+	background-position: -377px -145px
+}
+
+.qq_face .qqface89 {
+	background-position: -406px -145px
+}
+
+.qq_face .qqface90 {
+	background-position: 0 -174px
+}
+
+.qq_face .qqface91 {
+	background-position: -29px -174px
+}
+
+.qq_face .qqface92 {
+	background-position: -58px -174px
+}
+
+.qq_face .qqface93 {
+	background-position: -87px -174px
+}
+
+.qq_face .qqface94 {
+	background-position: -116px -174px
+}
+
+.qq_face .qqface95 {
+	background-position: -145px -174px
+}
+
+.qq_face .qqface96 {
+	background-position: -174px -174px
+}
+
+.qq_face .qqface97 {
+	background-position: -203px -174px
+}
+
+.qq_face .qqface98 {
+	background-position: -232px -174px
+}
+
+.qq_face .qqface99 {
+	background-position: -261px -174px
+}
+
+.qq_face .qqface100 {
+	background-position: -290px -174px
+}
+
+.qq_face .qqface101 {
+	background-position: -319px -174px
+}
+
+.qq_face .qqface102 {
+	background-position: -348px -174px
+}
+
+.qq_face .qqface103 {
+	background-position: -377px -174px
+}
+
+.qq_face .qqface104 {
+	background-position: -406px -174px
+}
+
+.qqemoji {
+	background: url(../images/2P-sgxD.png) 0 0 no-repeat;
+	width: 20px;
+	height: 20px;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline
+}
+.qqemoji0 {
+	background-position: -2px -2px
+}
+
+.qqemoji1 {
+	background-position: -27px -2px
+}
+
+.qqemoji2 {
+	background-position: -52px -2px
+}
+
+.qqemoji3 {
+	background-position: -77px -2px
+}
+
+.qqemoji4 {
+	background-position: -102px -2px
+}
+
+.qqemoji5 {
+	background-position: -127px -2px
+}
+
+.qqemoji6 {
+	background-position: -152px -2px
+}
+
+.qqemoji7 {
+	background-position: -177px -2px
+}
+
+.qqemoji8 {
+	background-position: -202px -2px
+}
+
+.qqemoji9 {
+	background-position: -227px -2px
+}
+
+.qqemoji10 {
+	background-position: -252px -2px
+}
+
+.qqemoji11 {
+	background-position: -277px -2px
+}
+
+.qqemoji12 {
+	background-position: -302px -2px
+}
+
+.qqemoji13 {
+	background-position: -327px -2px
+}
+
+.qqemoji14 {
+	background-position: -352px -2px
+}
+
+.qqemoji15 {
+	background-position: -2px -27px
+}
+
+.qqemoji16 {
+	background-position: -27px -27px
+}
+
+.qqemoji17 {
+	background-position: -52px -27px
+}
+
+.qqemoji18 {
+	background-position: -77px -27px
+}
+
+.qqemoji19 {
+	background-position: -102px -27px
+}
+
+.qqemoji20 {
+	background-position: -127px -27px
+}
+
+.qqemoji21 {
+	background-position: -152px -27px
+}
+
+.qqemoji22 {
+	background-position: -177px -27px
+}
+
+.qqemoji23 {
+	background-position: -202px -27px
+}
+
+.qqemoji24 {
+	background-position: -227px -27px
+}
+
+.qqemoji25 {
+	background-position: -252px -27px
+}
+
+.qqemoji26 {
+	background-position: -277px -27px
+}
+
+.qqemoji27 {
+	background-position: -302px -27px
+}
+
+.qqemoji28 {
+	background-position: -327px -27px
+}
+
+.qqemoji29 {
+	background-position: -352px -27px
+}
+
+.qqemoji30 {
+	background-position: -2px -52px
+}
+
+.qqemoji31 {
+	background-position: -27px -52px
+}
+
+.qqemoji32 {
+	background-position: -52px -52px
+}
+
+.qqemoji33 {
+	background-position: -77px -52px
+}
+
+.qqemoji34 {
+	background-position: -102px -52px
+}
+
+.qqemoji35 {
+	background-position: -127px -52px
+}
+
+.qqemoji36 {
+	background-position: -152px -52px
+}
+
+.qqemoji37 {
+	background-position: -177px -52px
+}
+
+.qqemoji38 {
+	background-position: -202px -52px
+}
+
+.qqemoji39 {
+	background-position: -227px -52px
+}
+
+.qqemoji40 {
+	background-position: -252px -52px
+}
+
+.qqemoji41 {
+	background-position: -277px -52px
+}
+
+.qqemoji42 {
+	background-position: -302px -52px
+}
+
+.qqemoji43 {
+	background-position: -327px -52px
+}
+
+.qqemoji44 {
+	background-position: -352px -52px
+}
+
+.qqemoji45 {
+	background-position: -2px -77px
+}
+
+.qqemoji46 {
+	background-position: -27px -77px
+}
+
+.qqemoji47 {
+	background-position: -52px -77px
+}
+
+.qqemoji48 {
+	background-position: -77px -77px
+}
+
+.qqemoji49 {
+	background-position: -102px -77px
+}
+
+.qqemoji50 {
+	background-position: -127px -77px
+}
+
+.qqemoji51 {
+	background-position: -152px -77px
+}
+
+.qqemoji52 {
+	background-position: -177px -77px
+}
+
+.qqemoji53 {
+	background-position: -202px -77px
+}
+
+.qqemoji54 {
+	background-position: -227px -77px
+}
+
+.qqemoji55 {
+	background-position: -252px -77px
+}
+
+.qqemoji56 {
+	background-position: -277px -77px
+}
+
+.qqemoji57 {
+	background-position: -302px -77px
+}
+
+.qqemoji58 {
+	background-position: -327px -77px
+}
+
+.qqemoji59 {
+	background-position: -352px -77px
+}
+
+.qqemoji60 {
+	background-position: -2px -102px
+}
+
+.qqemoji61 {
+	background-position: -27px -102px
+}
+
+.qqemoji62 {
+	background-position: -52px -102px
+}
+
+.qqemoji63 {
+	background-position: -77px -102px
+}
+
+.qqemoji64 {
+	background-position: -102px -102px
+}
+
+.qqemoji65 {
+	background-position: -127px -102px
+}
+
+.qqemoji66 {
+	background-position: -152px -102px
+}
+
+.qqemoji67 {
+	background-position: -177px -102px
+}
+
+.qqemoji68 {
+	background-position: -202px -102px
+}
+
+.qqemoji69 {
+	background-position: -227px -102px
+}
+
+.qqemoji70 {
+	background-position: -252px -102px
+}
+
+.qqemoji71 {
+	background-position: -277px -102px
+}
+
+.qqemoji72 {
+	background-position: -302px -102px
+}
+
+.qqemoji73 {
+	background-position: -327px -102px
+}
+
+.qqemoji74 {
+	background-position: -352px -102px
+}
+
+.qqemoji75 {
+	background-position: -2px -127px
+}
+
+.qqemoji76 {
+	background-position: -27px -127px
+}
+
+.qqemoji77 {
+	background-position: -52px -127px
+}
+
+.qqemoji78 {
+	background-position: -77px -127px
+}
+
+.qqemoji79 {
+	background-position: -102px -127px
+}
+
+.qqemoji80 {
+	background-position: -127px -127px
+}
+
+.qqemoji81 {
+	background-position: -152px -127px
+}
+
+.qqemoji82 {
+	background-position: -177px -127px
+}
+
+.qqemoji83 {
+	background-position: -202px -127px
+}
+
+.qqemoji84 {
+	background-position: -227px -127px
+}
+
+.qqemoji85 {
+	background-position: -252px -127px
+}
+
+.qqemoji86 {
+	background-position: -277px -127px
+}
+
+.qqemoji87 {
+	background-position: -302px -127px
+}
+
+.qqemoji88 {
+	background-position: -327px -127px
+}
+
+.qqemoji89 {
+	background-position: -352px -127px
+}
+
+.qqemoji90 {
+	background-position: -2px -152px
+}
+
+.qqemoji91 {
+	background-position: -27px -152px
+}
+
+.qqemoji92 {
+	background-position: -52px -152px
+}
+
+.qqemoji93 {
+	background-position: -77px -152px
+}
+
+.qqemoji94 {
+	background-position: -102px -152px
+}
+
+.qqemoji95 {
+	background-position: -127px -152px
+}
+
+.qqemoji96 {
+	background-position: -152px -152px
+}
+
+.qqemoji97 {
+	background-position: -177px -152px
+}
+
+.qqemoji98 {
+	background-position: -202px -152px
+}
+
+.qqemoji99 {
+	background-position: -227px -152px
+}
+
+.qqemoji100 {
+	background-position: -252px -152px
+}
+
+.qqemoji101 {
+	background-position: -277px -152px
+}
+
+.qqemoji102 {
+	background-position: -302px -152px
+}
+
+.qqemoji103 {
+	background-position: -327px -152px
+}
+
+.qqemoji104 {
+	background-position: -352px -152px
+}
+
+.messageWrite{
+	height: 150px;
+	overflow: auto;
+}
+
+.web_wechat_pic, .web_wechat_profile_loc {
+  display: inline-block;
+}
+.web_wechat_pic{
+	  width: 30px;
+  height: 30px;
+  background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+  background-position: -120px -432px;
+  -webkit-background-size: 487px 462px;
+  background-size: 487px 462px;
+}
+
+.webuploader-container{
+	position: relative;
+}
+.webuploader-pick{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  filter: alpha(opacity = 0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.webuploader-element-invisible{
+  position: absolute;
+  clip: rect(1px,1px,1px,1px);
+}
+.picture{
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.bubble_cont .picture img{
+	display: block;
+  cursor: pointer;
+  max-width: 350px;
+  max-height: 240px;
+}
+.bubble_cont img{
+	vertical-align: middle;
+}
+/* .bubble_cont.ng-scope{
+	  padding: 9px 13px;
+} */
+
+.bubble_cont .attach{
+  padding: 10px;
+  background-color: #fff;
+  min-height: 75px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  min-width: 250px;
+  max-width: 300px;
+  margin: 2px;
+  position: relative;
+}
+.bubble_cont .attach_bd .cover{
+  display: table-cell;
+  padding-right: 10px;
+}
+.icon-unknown{
+  background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+  background-position: -346px -152px;
+  -webkit-background-size: 487px 462px;
+  background-size: 487px 462px;
+}
+.icon-key, .icon-unknown{
+  display: inline-block;
+  vertical-align: middle;
+  width: 76px;
+  height: 76px;
+}
+.bubble_cont .attach_bd .cont{
+  display: table-cell;
+  vertical-align: top;
+}
+.bubble_cont .attach_bd .cont .title{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 200px;
+}
+.bubble_cont .attach_bd .cont .opr{
+	margin-top: 25px;
+}
+.bubble_cont .attach_bd .cont .opr a{
+  color: #35ac2f;
+  text-decoration: none;
+}
+
+div.message.ng-scope.me div.bubble.js_message_bubble.ng-scope.bubble_primary{
+   background-color: #b2e281;
+   border: none;	
+}
+.box_hd{
+  text-align: center;
+  position: relative;
+  width:100%;
+  line-height: 30px;
+}
+.box_hd .title_wrap{
+  position: relative;
+  padding: 10px 0;
+  margin: 0 19px;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #eee;
+  z-index: 1024;
+}
+.box_hd .title.poi{
+  cursor: pointer;	
+}
+.box_hd .title{
+  font-weight: 400;
+  height: 25px;
+  display: inline-block;
+  font-size: 14px;
+}
+.box_hd .title .title_name{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+}
+/* .web_wechat_down_icon, .web_wechat_face{
+  display: inline-block;
+  vertical-align: middle;
+} */
+.web_wechat_down_icon{
+	display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+  background-position: -477px -65px;
+  -webkit-background-size: 487px 462px;
+  background-size: 487px 462px;
+}
+.clear{
+  clear: both;	
+}
+.header{
+	padding: 18px;
+    position: relative;
+}
+.header .avatar{
+	display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+    padding-right: 10.625px;
+}
+.header .avatar .img{
+	width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: block;
+    cursor: pointer;
+}
+.header .info{
+    display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 2000px;	
+}
+.header .info .nickname .display_name{
+	display: inline-block;
+    font-weight: 400;
+    width: 156px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    color: #fff;
+    font-size: 18px;
+    vertical-align: top;
+    line-height: 31px;
+    text-decoration: none;
+}
+.search_bar {
+	position: relative;
+    width: 294px;
+    margin: 0 auto 6px;
+}
+.search_bar .web_wechat_search{
+    position: absolute;
+    z-index: 101;
+    top: 1px;	
+}
+.web_wechat_search{
+	background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+    background-position: -60px -432px;
+    -webkit-background-size: 487px 462px;
+    background-size: 487px 462px;
+}
+.search_bar .frm_search{
+	width: 196px;
+    height: 32px;
+    line-height: 32px;
+    border: 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: #26292e;
+    color: #fff;
+    padding-left: 30px;
+    font-size: 12px;
+}
+.web_wechat_screencut, .web_wechat_search{
+	display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+.tab{
+	overflow: hidden;
+    position: relative;
+    padding-bottom: 4px;
+}
+.tab .tab_item{
+	float: left;
+    width: 33.33333333%;
+    position: relative;
+}
+.tab .tab_item a{
+	display: block;
+    text-align: center;
+}
+
+.web_wechat_tab_chat, .web_wechat_tab_chat_hl{
+	display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+}
+.web_wechat_tab_chat_hl{
+	background: url(../images/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+    background-position: -185px -96px;
+    -webkit-background-size: 487px 462px;
+    background-size: 487px 462px;
+}
+.tab:after{
+	content: '';
+    position: absolute;
+    border-bottom: 1px solid #24272c;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* .nav_view{
+	position: absolute;
+    top: 154px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+} */
+.chat_list {
+	height: 100%;
+	position: relative;
+}
+.scroll-wrapper{
+	overflow: hidden!important;
+    padding: 0!important;
+}
+.chat_item.active{
+	background: #3a3f45;
+}
+.chat_item{
+	overflow: hidden;
+    padding: 12px 18px 11px;
+    border-bottom: 1px solid #292c33;
+    cursor: pointer;
+    position: relative;
+}
+.chat_item.active .ext, .chat_item.active .info .msg{
+	color: #fff;
+}
+.chat_item .ext{
+	float: right;
+    color: #6b6f7c;
+    font-size: 13px;
+    text-align: right;
+}
+.chat_item .ext .attr{
+	height: 19px;
+    line-height: 1.5;
+}
+.chat_item .avatar{
+	float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.chat_item .info{
+	overflow: hidden;
+}
+.chat_item .info .nickname{
+	font-weight: 400;
+    font-size: 13px;
+    color: #fff;
+    line-height: 20px;
+}
+.chat_item .info .nickname_count, .chat_item .info .nickname_text{
+	display: inline-block;
+    vertical-align: top;
+}
+.chat_item .info .nickname_text{
+	width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.chat_item .info .nickname{
+	font-weight: 400;
+    font-size: 13px;
+    color: #fff;
+    line-height: 20px;
+}
+.chat_item .info .msg{
+	color: #989898;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    height: 1.5em;
+}
+h1, h2, h3{
+	padding-top: 0px; 
+	padding-bottom:0px;
+}
+.members_wrp{
+	top: 50px;
+    margin-top: 1px;
+    box-shadow: 1px 1px 1px #e0e0e0;
+    -moz-box-shadow: 1px 1px 1px #e0e0e0;
+    -webkit-box-shadow: 1px 1px 1px #e0e0e0;
+    width: 100%;
+}
+
+  .mmpop{
+	position: absolute;
+    background-color: #fff;
+    z-index: 99;
+    top: 47;
+    left: 0;
+    outline: none;
+}  
+.members{
+	padding: 10px 4px 8px 17px;
+    background-color: #eee;
+    border-bottom: 1px solid #dedede;
+}
+.members_inner{
+	margin-right: -4px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.member.opt{
+	cursor: pointer;
+    margin-right: 15px;
+}
+.member{
+	float: left;
+    position: relative;
+    height: 85px;
+    margin-right: 7px;
+    margin-left: 7px;
+    padding-top: 10px;
+}
+.web_wechat_add_friends{
+	display: inline-block;
+    vertical-align: middle;
+    width: 55px;
+    height: 55px;
+    background: url(//res.wx.qq.com/a/wx_fed/webwx/res/static/css/5af37c4a880a95586cd41c5b251d5562@1x.png) no-repeat;
+    background-position: -422px -55px;
+    -webkit-background-size: 487px 462px;
+    background-size: 487px 462px;
+}
+.member .avatar{
+	 display: block;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    background-color: #ccc;
+}
+.member .nickname{
+	color: #888;
+    width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 12px;
+    margin-left: -8px;
+    vertical-align: middle;
+}
+.ngdialog-overlay{
+	 background: rgba(0,0,0,.4);
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: b .1s;
+    animation: b .1s;
+}
+.ngdialog, .ngdialog-overlay{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
