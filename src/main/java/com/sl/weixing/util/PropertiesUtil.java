@@ -1,4 +1,4 @@
-package util;
+package com.sl.weixing.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

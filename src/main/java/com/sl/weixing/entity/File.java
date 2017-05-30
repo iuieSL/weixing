@@ -17,10 +17,10 @@ public class File implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private  Integer id;
 
+    private String name;
+
     @Column(name = "description")
     private  String desc;
-
-    private String url;
 
     @OneToMany                                          //指定一对多关系
     @JoinColumn(name="head_portrait_id")
@@ -41,12 +41,13 @@ public class File implements Serializable {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    public String getUrl() {
-        return url;
+
+    public String getName() {
+        return name;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<User> getUsers() {

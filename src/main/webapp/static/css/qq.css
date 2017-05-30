@@ -1280,7 +1280,7 @@ div.message.ng-scope.me div.bubble.js_message_bubble.ng-scope.bubble_primary{
     white-space: nowrap;
     padding-right: 10.625px;
 }
-.header .avatar .img{
+.avatar .img{
 	width: 40px;
     height: 40px;
     border-radius: 2px;

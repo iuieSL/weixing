@@ -22,7 +22,7 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String index(HttpServletRequest request) {
-       List<User> userList=userServiceImpl.getAllUser();
+        List<User> userList=userServiceImpl.getAllUser();
         request.getSession().setAttribute("userList",userList);
         return "index";
     }

@@ -1,4 +1,4 @@
-package util;
+package com.sl.weixing.util;
 
 /**
  * Created by carols on 2017/5/29.
