@@ -5,6 +5,8 @@ import com.sl.weixing.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -25,10 +27,10 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/login")
-    public String login(Integer id,HttpServletRequest request){
-        if(id != null){
-             User user=userServiceImpl.findUserById(id);
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public String login(@RequestParam("userId") Integer userId, HttpServletRequest request){
+        if(userId != null){
+             User user=userServiceImpl.findUserById(userId);
              request.getSession().setAttribute("user",user);
         }
         return "chat";

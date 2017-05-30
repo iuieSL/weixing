@@ -17,6 +17,10 @@ public class User implements Serializable {
     @Column(name="user_name")
     private String userName;
 
+    @ManyToOne(targetEntity = File.class)
+    @JoinColumn(name = "head_portrait_id", referencedColumnName = "id")
+    private File headPortrait;
+
     public Integer getId() {
         return id;
     }
@@ -32,4 +36,13 @@ public class User implements Serializable {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public File getHeadPortrait() {
+        return headPortrait;
+    }
+
+    public void setHeadPortrait(File headPortrait) {
+        this.headPortrait = headPortrait;
+    }
+
 }

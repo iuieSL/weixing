@@ -2,6 +2,8 @@ package com.sl.weixing.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by carols on 2017/5/29.
@@ -15,12 +17,14 @@ public class File implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private  Integer id;
 
-    private  String name;
-
-    private  String desciption;
+    @Column(name = "description")
+    private  String desc;
 
     private String url;
 
+    @OneToMany                                          //指定一对多关系
+    @JoinColumn(name="head_portrait_id")
+    private Set<User> users=new HashSet<User>();
 
     public Integer getId() {
         return id;
@@ -30,27 +34,26 @@ public class File implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
-
-    public String getDesciption() {
-        return desciption;
-    }
-
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
