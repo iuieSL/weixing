@@ -1,18 +1,16 @@
-package com.sl.weixing.websocket;
+package com.sl.weixing.webscoket;
 
 import com.sl.weixing.entity.Chat;
 import com.sl.weixing.entity.User;
 import com.sl.weixing.enumeration.ChatTypeEnum;
 import com.sl.weixing.service.ChatService;
 import com.sl.weixing.service.UserService;
+import com.sl.weixing.util.ApplicationContextRegister;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.socket.*;
-import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
-import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,7 +24,6 @@ import java.util.Set;
  * Created by 莉 on 2017/5/27.
  */
 
-@Component
 public class ChatWebSocketHandler implements WebSocketHandler {
 
     private static final ArrayList<WebSocketSession> users = new ArrayList<>();
@@ -37,12 +34,17 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 
     private static String username;
 
-    @Autowired
+
     private UserService userService;
 
-    @Autowired
+
     private ChatService chatService;
 
+    {
+        ApplicationContext act = ApplicationContextRegister.getApplicationContext();
+        userService=act.getBean(UserService.class);
+        chatService=act.getBean(ChatService.class);
+    }
     /**
      * 建立连接
      * @param webSocketSession

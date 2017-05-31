@@ -1,13 +1,11 @@
-package com.sl.weixing.websocket;
+package com.sl.weixing.webscoket;
 
 import com.sl.weixing.entity.User;
-import com.sl.weixing.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
+import org.springframework.web.socket.server.HandshakeInterceptor;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -15,7 +13,7 @@ import java.util.Map;
 /**
  * Created by 莉 on 2017/5/27.
  */
-public class ChatHandshakeInterceptor extends HttpSessionHandshakeInterceptor {
+public class ChatHandshakeInterceptor implements HandshakeInterceptor{
 
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
@@ -33,6 +31,6 @@ public class ChatHandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 
     @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Exception ex) {
-        super.afterHandshake(request, response, wsHandler, ex);
+
     }
 }
