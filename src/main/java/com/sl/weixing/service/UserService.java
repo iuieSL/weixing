@@ -12,4 +12,6 @@ public interface UserService {
     List<User> getAllUser();
 
     User findUserById(Integer id);
+
+    User findUserByName(String nickname);
 }

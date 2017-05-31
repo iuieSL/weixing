@@ -20,7 +20,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        String websocket_url = "/websocket.do";
+        String websocket_url = "/websocket";
         registry.addHandler(new ChatWebSocketHandler(),websocket_url)
                 .addInterceptors(new ChatHandshakeInterceptor());
     }
