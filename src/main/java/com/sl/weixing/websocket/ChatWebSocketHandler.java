@@ -10,9 +10,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.*;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -26,11 +25,11 @@ import java.util.Set;
 /**
  * Created by 莉 on 2017/5/27.
  */
-@ServerEndpoint(value = "/websocket")
+
 @Component
 public class ChatWebSocketHandler implements WebSocketHandler {
 
-    private static final ArrayList<WebSocketSession> users = new ArrayList<WebSocketSession>();
+    private static final ArrayList<WebSocketSession> users = new ArrayList<>();
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
@@ -41,6 +40,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
     @Autowired
     private UserService userService;
 
+    @Autowired
     private ChatService chatService;
 
     /**
@@ -131,6 +131,9 @@ public class ChatWebSocketHandler implements WebSocketHandler {
      */
     @Override
     public void handleTransportError(WebSocketSession webSocketSession, Throwable throwable) throws Exception {
+        if(webSocketSession.isOpen()){
+            webSocketSession.close();
+        }
         users.remove(webSocketSession);
     }
 
@@ -161,4 +164,19 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         return  message;
     }
 
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    public ChatService getChatService() {
+        return chatService;
+    }
+
+    public void setChatService(ChatService chatService) {
+        this.chatService = chatService;
+    }
 }

@@ -119,7 +119,7 @@
 
             </div>
         </div>
-<script type="text/javascript" src="<%=contextpath %>/lib/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="<%=contextpath%>/lib/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript" src="<%=contextpath %>/static/js/barTool.js"></script>
 <script type="text/javascript" src="<%=contextpath%>/static/js/webSocket.js"></script>
 <script type="text/javascript" src="<%=contextpath%>/static/js/chat.js"></script>

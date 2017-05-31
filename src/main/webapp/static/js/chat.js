@@ -13,9 +13,9 @@ var Chat = {
         if (fromUserId == "" || fromUserId == 'undefined') return;
         chatType = typeof chatType !== 'undefined' ? chatType : CHAT_TYPE.WORD_TYPE;
         content = typeof content !== 'undefined' ? content : $("#message").html();
-        var username = $("#username").val();
-        var toUsers = $("#toUserIds").val();
-        if (content == "" && content == "") return;
+        var username = $("input[name='username']").val();
+        var toUsers = $("input[name='toUserIds']").val();
+        if (content == "" || content == null) return;
         websocket.send(JSON.stringify({
             nickname: username,
             content: content,
@@ -85,7 +85,7 @@ var Chat = {
         var toUserId = $(this).data("userid");
         var toUserName = $(this).data("username");
         if (toUserId != "" && toUserId != 'undefined') {
-            $("input[name='toUserId']").val(toUserId);
+            $("input[name='toUserIds']").val(toUserId);
         }
         if (toUserName != "" && toUserName != 'undefined') {
             $("input[name='toUserName']").val(toUserName);
