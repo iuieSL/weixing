@@ -1,7 +1,7 @@
 package com.sl.weixing.entity;
 
-import com.sl.weixing.enumeration.ChatTypeEnum;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,15 +17,15 @@ import java.util.Set;
 public class Chat implements Serializable {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private  Integer id;
+    @GeneratedValue(generator = "paymentableGenerator")
+    @GenericGenerator(name = "paymentableGenerator", strategy = "assigned")
+    private  String ids;
 
 
     private  String chatValue; //发送的话
 
     @Column
-    @Enumerated(EnumType.STRING)
-    private ChatTypeEnum type; //发送的类型
+    private String type; //发送的类型
 
     @ManyToOne(targetEntity = User.class, cascade = { javax.persistence.CascadeType.ALL })
     @JoinColumn(name = "from_user_id", referencedColumnName = "id")
@@ -49,12 +49,12 @@ public class Chat implements Serializable {
     @org.hibernate.annotations.Type(type="true_false")
     private Boolean hasSend; //是否发送成功
 
-    public Integer getId() {
-        return id;
+    public String getIds() {
+        return ids;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIds(String ids) {
+        this.ids = ids;
     }
 
     public String getChatValue() {
@@ -65,11 +65,11 @@ public class Chat implements Serializable {
         this.chatValue = chatValue;
     }
 
-    public ChatTypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(ChatTypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 

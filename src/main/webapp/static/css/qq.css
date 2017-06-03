@@ -48,7 +48,8 @@ body{
     div.rightChat ul li{
        margin-top:10px;
     }
-    .message .avatar{
+    .message .avatar,.message .avatar img{
+       display: inline-block;
        width: 40px;
   	   height: 40px;
        border-radius: 2px;
@@ -126,6 +127,7 @@ body{
        border: none;
     }
     div.message.ng-scope.me pre{
+       padding: 10px;
        background-color: #b2e281;
        border: none;
     }

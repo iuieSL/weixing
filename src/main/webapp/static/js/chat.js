@@ -34,7 +34,7 @@ var Chat = {
         if (typeof message == "string") {
             var message = JSON.parse(message);
         }
-        var headPhtoUrl = "ShowPic.action?imageURL=" + message.name;
+        var headPhtoUrl = "ShowPic.action?imageName=" + message.headPhtoName;
         var messageItem = null;
         //是否是发送者
         if (message.isSelf) {
@@ -56,10 +56,11 @@ var Chat = {
             + '<div class="content">'
             + '<div class="bubble js_message_bubble ng-scope bubble_primary">'
             + '<div  class="bubble_cont ng-scope">'
-        if (message.type == CHAT_TYPE.IMAGE_TYPE) {
-            var url = "ShowPic.action?imageURL=" + message.chatValue;
-            messageItem = messageItem + '<div class="picture">'
-                + '<img class="msg-img" src=' + url + '/></div>'
+        if (message.type == CHAT_TYPE.WORD_TYPE) {
+            messageItem=messageItem
+                + '<div class="plain">'
+                   + '<pre class="js_message_plain ng-binding" ng-bind-html="message.MMActualContent">' +message.content + '</pre>'
+                +'</div>';
         }
         messageItem = messageItem + '</div>' + '</div>'
             + '</div>' + '</div>' + '</div>' + '</div>';

@@ -13,15 +13,14 @@ import org.springframework.web.socket.*;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.*;
 
 
 /**
+ *
  * Created by 莉 on 2017/5/27.
+ *
+ *
  */
 
 public class ChatWebSocketHandler implements WebSocketHandler {
@@ -33,7 +32,6 @@ public class ChatWebSocketHandler implements WebSocketHandler {
     private static boolean isShowTime = true;
 
     private static String username;
-
 
     private UserService userService;
 
@@ -77,6 +75,9 @@ public class ChatWebSocketHandler implements WebSocketHandler {
      */
     private void sendMessage(User toUser,JSONObject message) throws JSONException {
         String toUserName=toUser.getUserName();
+        User fromUser=userService.findUserByName(username);
+        message.put("headPhtoName",fromUser.getHeadPortrait().getName());
+        message.put("showTime",isShowTime);
         for (WebSocketSession user : users) {
             String name = "";
             Object str = user.getAttributes().get("username");
@@ -110,11 +111,11 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         chat.setSendTime(new Date());
         String chatType=message.get("type").toString();
         if(ChatTypeEnum.WORD_TYPE.getValue().equals(chatType)){
-            chat.setType(ChatTypeEnum.WORD_TYPE);
+            chat.setType(ChatTypeEnum.WORD_TYPE.getValue());
         }else if(ChatTypeEnum.FILE_TYPE.getValue().equals(chatType)){
-            chat.setType(ChatTypeEnum.FILE_TYPE);
+            chat.setType(ChatTypeEnum.FILE_TYPE.getValue());
         }else if(ChatTypeEnum.IMAGE_TYPE.getValue().equals(chatType)){
-            chat.setType(ChatTypeEnum.IMAGE_TYPE);
+            chat.setType(ChatTypeEnum.IMAGE_TYPE.getValue());
         }
         User fromUser= userService.findUserByName(message.get("nickname").toString());
         User toUser = userService.findUserById(Integer.valueOf(message.get("toUsers").toString()));
@@ -122,6 +123,10 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         toUsers.add(toUser);
         chat.setFromUser(fromUser);
         chat.setToUsers(toUsers);
+        chat.setHasSend(true);
+        chat.setShowTime(isShowTime);
+        isShowTime=!isShowTime;
+        chat.setIds(String.valueOf(Calendar.getInstance().getTimeInMillis()));
         chatService.saveChat(chat);
     }
 
