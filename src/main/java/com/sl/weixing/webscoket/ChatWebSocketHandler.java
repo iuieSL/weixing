@@ -29,7 +29,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-    private static boolean isShowTime = true;
+    private static boolean isShowTime;
 
     private static String username;
 
@@ -42,6 +42,7 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         ApplicationContext act = ApplicationContextRegister.getApplicationContext();
         userService=act.getBean(UserService.class);
         chatService=act.getBean(ChatService.class);
+        isShowTime=true;
     }
     /**
      * 建立连接
@@ -125,7 +126,9 @@ public class ChatWebSocketHandler implements WebSocketHandler {
         chat.setToUsers(toUsers);
         chat.setHasSend(true);
         chat.setShowTime(isShowTime);
-        isShowTime=!isShowTime;
+        if(isShowTime){
+            isShowTime=!isShowTime;
+        }
         chat.setIds(String.valueOf(Calendar.getInstance().getTimeInMillis()));
         chatService.saveChat(chat);
     }
