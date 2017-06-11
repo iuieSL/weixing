@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <%
     String contextpath = application.getContextPath();
 %>
@@ -237,7 +238,7 @@
 
             </div>
         </div>
-<script type="text/javascript" src="<%=contextpath%>/lib/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="<%=contextpath%>/static/lib/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript" src="<%=contextpath %>/static/js/util.js"></script>
 <script type="text/javascript" src="<%=contextpath %>/static/js/barTool.js"></script>
 <script type="text/javascript" src="<%=contextpath%>/static/js/webSocket.js"></script>
