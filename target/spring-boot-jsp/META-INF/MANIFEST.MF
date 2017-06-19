@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: com.sl.weixing Maven Webapp
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: carols
+Implementation-Vendor-Id: weixing
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.7.0_17
+Main-Class: ${start-class}
+
