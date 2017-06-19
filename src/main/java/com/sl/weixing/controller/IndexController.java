@@ -24,7 +24,7 @@ public class IndexController {
     public String index(HttpServletRequest request) {
         List<User> userList=userServiceImpl.getAllUser();
         request.getSession().setAttribute("userList",userList);
-        return "index";
+        return "test";
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
